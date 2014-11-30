@@ -23,7 +23,7 @@ public class CurrentWeatherParser {
         weather.setName(jObj.getString("name"));
 
         JSONObject jWeather = jObj.getJSONObject("weather");
-        weather.setWeatherId(jWeather.getInt("id"));
+        weather.setWeatherId(jWeather.getString("description"));
         weather.setIconId(jWeather.getString("icon"));
         weather.setIcon(new ImageQuery().getImage(weather.getIconId()));
 

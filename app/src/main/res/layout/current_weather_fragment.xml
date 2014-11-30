@@ -4,6 +4,7 @@
     android:id="@+id/current_weather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".CurrentWeatherFragment"
     android:orientation="vertical">
 
 
@@ -21,17 +22,16 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:textIsSelectable="true"
-        tools:context=".ItemDetailFragment"
         android:autoText="true"
         android:layout_gravity="left"
-        android:text="Saint-Petersburg"
+        android:text="@string/city_example"
         android:textSize="30sp" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sun, 30th November"
+        android:text="@string/date_example"
         android:id="@+id/date"
         android:layout_gravity="left|top"
         android:textSize="20sp"
@@ -55,7 +55,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="115dp"
-            android:text="-20ºC"
+            android:text="@string/cur_temp_example"
             android:id="@+id/cur_temp"
             android:layout_gravity="center_vertical|left"
             android:textSize="55sp"
@@ -68,7 +68,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-22ºC"
+            android:text="@string/min_temp_example"
             android:id="@+id/min_temp"
             android:layout_gravity="left|center_vertical"
             android:textSize="25sp"
@@ -81,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-18ºC"
+            android:text="@string/max_temp_example"
             android:id="@+id/max_temp"
             android:layout_gravity="left|center_vertical"
             android:textSize="25sp"
@@ -103,12 +103,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left|top"
-        android:layout_marginTop="7dp">
+        android:layout_marginTop="7dp"
+        android:id="@+id/sun">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sunrise: 07:05"
+            android:text="@string/sunrise_example"
             android:id="@+id/sunrise"
             android:layout_gravity="left|top"
             android:layout_marginTop="75dp"
@@ -118,7 +119,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sunset: 19:10"
+            android:text="@string/sunset_example"
             android:id="@+id/sunset"
             android:layout_gravity="left|top"
             android:layout_marginTop="75dp"
@@ -132,12 +133,13 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_gravity="left|bottom"
-        android:gravity="center">
+        android:gravity="center"
+        android:id="@+id/general_info">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Humidity: 70%"
+            android:text="@string/humidity_example"
             android:id="@+id/humidity"
             android:layout_gravity="left|bottom"
             android:textSize="20sp"
@@ -146,7 +148,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pressure: 700 hPa"
+            android:text="@string/pressure_example"
             android:id="@+id/pressure"
             android:layout_gravity="left|bottom"
             android:textSize="20sp"
@@ -158,12 +160,13 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_gravity="right|bottom"
-        android:gravity="center">
+        android:gravity="center"
+        android:id="@+id/wind_info">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wind"
+            android:text="@string/wind"
             android:id="@+id/wind"
             android:layout_gravity="right|bottom"
             android:textSize="21sp"
@@ -172,7 +175,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Speed: 1 mps"
+            android:text="@string/speed_example"
             android:id="@+id/speed"
             android:layout_gravity="left|bottom"
             android:textSize="20sp"
@@ -181,7 +184,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Direction: N-E"
+            android:text="@string/direction_example"
             android:id="@+id/direction"
             android:layout_gravity="left|bottom"
             android:textSize="20sp"
@@ -192,7 +195,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/id200"
+        android:text="@string/weatherId_example"
         android:id="@+id/weatherId"
         android:layout_gravity="center_horizontal|bottom"
         android:gravity="center"

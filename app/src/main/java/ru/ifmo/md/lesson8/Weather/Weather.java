@@ -7,7 +7,7 @@ import android.graphics.Bitmap;
  */
 public class Weather {
     private int dayTemp, minTemp, maxTemp, nightTemp, eveTem, mornTemp, pressure, humidity, id, windSpeed, windDeg;
-    private byte[] icon;
+    private int[] icon;
 
     public int getDayTemp() {
         return dayTemp;
@@ -97,11 +97,11 @@ public class Weather {
         this.windDeg = windDeg;
     }
 
-    public byte[] getIcon() {
+    public int[] getIcon() {
         return icon;
     }
 
-    public void setIcon(byte[] icon) {
+    public void setIcon(int[] icon) {
         this.icon = icon;
     }
 }

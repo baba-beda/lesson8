@@ -11,7 +11,7 @@ import java.net.URL;
 public class ImageQuery {
     public static final String IMAGE_URL = "http://openweathermap.org/img/w/";
 
-    public byte[] getImage(String code) {
+    public int[] getImage(String code) {
         HttpURLConnection con = null ;
         InputStream is = null;
         try {
@@ -29,7 +29,7 @@ public class ImageQuery {
             while (is.read(buffer) != -1)
                 baos.write(buffer);
 
-            return baos.toByteArray();
+            return convert(baos.toByteArray());
         }
         catch(Throwable t) {
             t.printStackTrace();
@@ -41,6 +41,17 @@ public class ImageQuery {
 
         return null;
 
+    }
+
+    public int[] convert(byte buf[]) {
+        int intArr[] = new int[buf.length / 4];
+        int offset = 0;
+        for(int i = 0; i < intArr.length; i++) {
+            intArr[i] = (buf[3 + offset] & 0xFF) | ((buf[2 + offset] & 0xFF) << 8) |
+                    ((buf[1 + offset] & 0xFF) << 16) | ((buf[offset] & 0xFF) << 24);
+            offset += 4;
+        }
+        return intArr;
     }
 
 }

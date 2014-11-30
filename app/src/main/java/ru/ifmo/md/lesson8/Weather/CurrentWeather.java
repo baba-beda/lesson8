@@ -8,9 +8,9 @@ import java.sql.Time;
  */
 public class CurrentWeather {
     private Time sunrise, sunset;
-    private int temperature, pressure, humidity, minTemperature, maxTemperature, windSpeed, windDeg, weatherId;
-    private String name, iconId;
-    private byte[] icon;
+    private int temperature, pressure, humidity, minTemperature, maxTemperature, windSpeed, windDeg;
+    private String name, iconId, weatherId;
+    private int[] icon;
 
     public String getIconId() {
         return iconId;
@@ -20,11 +20,11 @@ public class CurrentWeather {
         this.iconId = iconId;
     }
 
-    public byte[] getIcon() {
+    public int[] getIcon() {
         return icon;
     }
 
-    public void setIcon(byte[] icon) {
+    public void setIcon(int[] icon) {
         this.icon = icon;
     }
 
@@ -112,11 +112,12 @@ public class CurrentWeather {
     }
 
 
-    public int getWeatherId() {
+    public String getWeatherId() {
         return weatherId;
     }
 
-    public void setWeatherId(int weatherId) {
+    public void setWeatherId(String weatherId) {
         this.weatherId = weatherId;
+        this.weatherId = this.weatherId.substring(0, 1).toUpperCase() + this.weatherId.substring(1);
     }
 }

@@ -4,11 +4,12 @@
     android:id="@+id/current_weather_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemDetailActivity"
+    tools:context=".CurrentWeatherActivity"
     tools:ignore="MergeRootFrame">
     <fragment
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        class="ru.ifmo.md.lesson8.ItemDetailFragment"
+        class="ru.ifmo.md.lesson8.CurrentWeatherFragment"
+        android:id="@+id/current_weather_fragment"
         />
 </FrameLayout>
