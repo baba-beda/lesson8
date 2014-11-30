@@ -20,6 +20,9 @@ public class WeatherForecast {
 
     public void setName(String name) {
         this.name = name;
+        if (this.name.contains(" ")) {
+            this.name = this.name.replace(" ", "-");
+        }
     }
 
     public void addDay(Weather w) {

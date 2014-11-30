@@ -9,8 +9,16 @@ import java.sql.Time;
 public class CurrentWeather {
     private Time sunrise, sunset;
     private int temperature, pressure, humidity, minTemperature, maxTemperature, windSpeed, windDeg, weatherId;
-    private String name;
+    private String name, iconId;
     private byte[] icon;
+
+    public String getIconId() {
+        return iconId;
+    }
+
+    public void setIconId(String iconId) {
+        this.iconId = iconId;
+    }
 
     public byte[] getIcon() {
         return icon;
@@ -26,6 +34,9 @@ public class CurrentWeather {
 
     public void setName(String name) {
         this.name = name;
+        if (this.name.contains(" ")) {
+            this.name = this.name.replace(" ", "-");
+        }
     }
 
     public Time getSunrise() {

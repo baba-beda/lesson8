@@ -1,6 +1,5 @@
 package ru.ifmo.md.lesson8.Parsers;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,13 +18,15 @@ public class CurrentWeatherParser {
         JSONObject jObj = new JSONObject(data);
 
         JSONObject sysObj = jObj.getJSONObject("sys");
-        weather.setSunrise(new Time(Long.parseLong(sysObj.getString("sunrise"))));
-        weather.setSunset(new Time(Long.parseLong(sysObj.getString("sunset"))));
+        weather.setSunrise(new Time(Long.parseLong(sysObj.getString("sunrise")) * 1000));
+        weather.setSunset(new Time(Long.parseLong(sysObj.getString("sunset")) * 1000));
         weather.setName(jObj.getString("name"));
 
         JSONObject jWeather = jObj.getJSONObject("weather");
         weather.setWeatherId(jWeather.getInt("id"));
-        weather.setIcon(new ImageQuery().getImage(jWeather.getString("icon")));
+        weather.setIconId(jWeather.getString("icon"));
+        weather.setIcon(new ImageQuery().getImage(weather.getIconId()));
+
 
         weather.setMaxTemperature((int) (jWeather.getDouble("temp_max") - 273.15));
         weather.setMinTemperature((int) (jWeather.getDouble("temp_min") - 273.15));

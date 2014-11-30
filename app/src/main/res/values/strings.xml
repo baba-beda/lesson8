@@ -4,6 +4,7 @@
     <string name="app_name">Weather</string>
     <string name="title_item_detail">Item Detail</string>
 
+    <!--types of weather, depending on id -->
     <string name="id200">thunderstorm with light rain</string>
     <string name="id201">thunderstorm with rain</string>
     <string name="id202">thunderstorm with heavy rain</string>
@@ -83,6 +84,5 @@
     <string name="id960">storm</string>
     <string name="id961">violent storm</string>
     <string name="id962">hurricane</string>
-
 
 </resources>
